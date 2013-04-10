@@ -9,8 +9,6 @@ import org.apache.hadoop.io.WritableUtils;
 import org.openrdf.model.URI;
 import org.openrdf.model.impl.URIImpl;
 
-import com.google.common.collect.ImmutableBiMap;
-
 public class UriWritable implements WritableComparable<UriWritable> {
 
 	private URI uri;
@@ -24,7 +22,6 @@ public class UriWritable implements WritableComparable<UriWritable> {
 	}
 
 	public void write(DataOutput out) throws IOException {
-		String ns = uri.getNamespace();
 		WritableUtils.writeString(out, uri.stringValue());		
 	}
 
